@@ -1,8 +1,10 @@
-import type { Metadata } from 'next';
 import { Noto_Sans_KR } from 'next/font/google';
+
+import Header from '@/common/components/header/Header';
+import Footer from '@/common/components/footer/Footer';
 import './globals.css';
-import Footer from '@/components/common/footer/Footer';
-import Header from '@/components/common/header/Header';
+
+import type { Metadata } from 'next';
 
 const sans = Noto_Sans_KR({ subsets: ['latin'] });
 
@@ -18,13 +20,14 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="ko" className={sans.className}>
-            <body>
+            <body className="flex w-full flex-col">
                 <Header />
-                <main>{children}</main>
+                <main className="mx-auto w-full max-w-screen-2xl grow">{children}</main>
                 <Footer />
             </body>
         </html>
     );
 }
 
-//폰트 적용법 (구글폰트)
+//테일윈드 익스텐션 설치, 테일윈드 프리티어 설치
+//테일윈드를 src 폴더에 전역으로 설치하기 위해 './src/**/*.{js,ts,jsx,tsx,mdx}', 적용

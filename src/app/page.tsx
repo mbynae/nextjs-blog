@@ -1,3 +1,9 @@
+import Hero from '@/entities/main/component/Hero';
+
 export default function Home() {
-    return <section className="bg-gray-500">section</section>;
+    return (
+        <>
+            <Hero />
+        </>
+    );
 }
